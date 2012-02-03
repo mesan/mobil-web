@@ -12,6 +12,12 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+/**
+ * Kontroller som laster et webview mot serveren som inneholder felles html5-kode.
+ *
+ * <p>Se http://developer.android.com/guide/webapps/webview.html for bakgrunn for mye av koden her.<br />
+ * Se http://mobil-web-server.appspot.com/ for felles html5-kode, eller server-prosjektet.</p>
+ */
 public class WebViewController extends Activity {
 
     private static String TAG = "mobilweb";
@@ -29,7 +35,9 @@ public class WebViewController extends Activity {
         setContentView(R.layout.main);
 
         myWebView = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = myWebView.getSettings();
+
+        // Aktiverer javascript støtte
+        final WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
         // Sørger for at klikk på linker åpner i appen, og ikke i nettleseren
