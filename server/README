@@ -1,0 +1,6 @@
+Server for å kjøre web-sider. 
+
+1. Kjør mvn eclipse:eclipse
+2. Kjør mvn clean install
+3. Importer prosjektet i Eclipse
+4. Kjør Jettystarter i debug-modus
