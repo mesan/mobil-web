@@ -89,6 +89,11 @@ namespace HybridPhone7
             String value = e.Value;
             MessageBox.Show(value);
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            webBrowser1.InvokeScript("changeTitle", "FraApp");
+        }
     }
 
 }
