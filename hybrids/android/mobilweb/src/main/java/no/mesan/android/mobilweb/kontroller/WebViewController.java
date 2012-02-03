@@ -5,17 +5,19 @@ import no.mesan.android.mobilweb.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class WebViewController extends Activity {
 
     private static String TAG = "mobilweb";
+    private WebView myWebView;
 
     /**
-     * Called when the activity is first created.
-     * @param savedInstanceState If the activity is being re-initialized after
-     * previously being shut down then this Bundle contains the data it most
-     * recently supplied in onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
+     * Laster viewet.
+     *
+     * {@inheritDoc}
      */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -23,7 +25,29 @@ public class WebViewController extends Activity {
         Log.i(TAG, "onCreate");
         setContentView(R.layout.main);
 
-        final WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView = (WebView) findViewById(R.id.webview);
+
+        // Sørger for at klikk på linker åpner i appen, og ikke i nettleseren
+        myWebView.setWebViewClient(new WebViewClient());
+
+        // Laster fra lokal jetty
         myWebView.loadUrl("http://10.0.2.2:8080");
+    }
+
+    /**
+     * Sørger for at back-knappen navigerer i websidene i appen, istedenfor å gå til forrige app.
+     *
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean onKeyDown(final int keyCode, final KeyEvent event) {
+        // Check if the key event was the BACK key and if there's history
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
+            myWebView.goBack();
+            return true;
+        }
+        // If it wasn't the BACK key or there's no web page history, bubble up to the default
+        // system behavior (probably exit the activity)
+        return super.onKeyDown(keyCode, event);
     }
 }
