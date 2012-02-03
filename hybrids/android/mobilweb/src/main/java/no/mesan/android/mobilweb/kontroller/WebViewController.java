@@ -1,5 +1,6 @@
 package no.mesan.android.mobilweb.kontroller;
 
+import android.webkit.WebSettings;
 import no.mesan.android.mobilweb.R;
 
 import android.app.Activity;
@@ -28,6 +29,8 @@ public class WebViewController extends Activity {
         setContentView(R.layout.main);
 
         myWebView = (WebView) findViewById(R.id.webview);
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
         // Sørger for at klikk på linker åpner i appen, og ikke i nettleseren
         myWebView.setWebViewClient(new MyWebViewClient());
