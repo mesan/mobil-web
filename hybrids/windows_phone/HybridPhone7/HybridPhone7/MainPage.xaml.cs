@@ -37,7 +37,7 @@ namespace HybridPhone7
 
         private void webBrowser1_Navigating(object sender, NavigatingEventArgs e)
         {
-            if (!e.Uri.AbsoluteUri.Contains(SERVER_ADDRESS))
+            if (!e.Uri.AbsoluteUri.Contains(SERVER_ADDRESS) && !e.Uri.AbsoluteUri.Contains("javascript"))
             {
                 e.Cancel = true;
                 WebBrowserTask task = new WebBrowserTask();
@@ -79,10 +79,15 @@ namespace HybridPhone7
             // to the browser
             if (_backStack.Count > 1)
             {
-
                 webBrowser1.InvokeScript("eval", "history.go(-1)");
                 e.Cancel = true;
             }
+        }
+
+        private void Browser_ScriptNotify(object sender, NotifyEventArgs e)
+        {
+            String value = e.Value;
+            MessageBox.Show(value);
         }
     }
 
