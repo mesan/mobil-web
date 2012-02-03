@@ -1,0 +1,6 @@
+
+Sett variablen ANDROID_HOME til å peke til Android SDK'en.
+Bruk Maven 3 for å bygge: mvn clean package
+Om du kjører Eclipse: mvn eclipse:eclipse, og importer så prosjektene.
+Sørg for at IntelliJ/Eclipse bruker Android SDK v2.2 (api 8).
+Lag også en AVD for Android 2.2, som kan brukes av emulatoren.
