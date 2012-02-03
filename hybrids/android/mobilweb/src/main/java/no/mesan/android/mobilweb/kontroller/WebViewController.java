@@ -1,4 +1,6 @@
-package no.mesan.android.mobilweb;
+package no.mesan.android.mobilweb.kontroller;
+
+import no.mesan.android.mobilweb.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -24,6 +26,4 @@ public class WebViewController extends Activity {
         final WebView myWebView = (WebView) findViewById(R.id.webview);
         myWebView.loadUrl("http://www.google.com");
     }
-
 }
-

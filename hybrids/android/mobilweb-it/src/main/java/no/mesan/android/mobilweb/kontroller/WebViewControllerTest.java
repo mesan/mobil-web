@@ -1,7 +1,8 @@
-package no.mesan.android.mobilweb.test;
+package no.mesan.android.mobilweb.kontroller;
 
 import android.test.ActivityInstrumentationTestCase2;
-import no.mesan.android.mobilweb.*;
+
+import no.mesan.android.mobilweb.kontroller.WebViewController;
 
 public class WebViewControllerTest extends ActivityInstrumentationTestCase2<WebViewController> {
 
@@ -14,4 +15,3 @@ public class WebViewControllerTest extends ActivityInstrumentationTestCase2<WebV
         assertNotNull(activity);
     }
 }
-
