@@ -3,4 +3,7 @@ Server for å kjøre web-sider.
 1. Kjør mvn eclipse:eclipse
 2. Kjør mvn clean install
 3. Importer prosjektet i Eclipse
-4. Kjør Jettystarter i debug-modus
+4. Kjør Jettystarter.java i debug-modus (Ligger i src-mappa)
+5. Åpne localhost:8080 i en browser
+
+Tips: På Android er localhost = 10.0.2.2
