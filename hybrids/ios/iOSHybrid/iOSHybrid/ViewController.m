@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize webView;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,6 +61,24 @@
     } else {
         return YES;
     }
+}
+
+-(IBAction)pageInfo {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
+                                                   message:@"Currently displaying view one" 
+                                                  delegate:self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles: nil];
+    
+    [alert show];
+    
+}
+
+-(IBAction)lastWebSide {
+    NSURL *url =  [[NSURL alloc] initWithString:@"http://localhost:8080"];
+//    NSURL *url =  [[NSURL alloc] initWithString:@"http://www.vg.no"];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    [webView loadRequest:urlRequest];
 }
 
 @end

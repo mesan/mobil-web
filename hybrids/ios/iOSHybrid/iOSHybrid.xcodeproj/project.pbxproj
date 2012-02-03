@@ -443,6 +443,7 @@
 				50BA6EA014DC0EBF009ADD15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50BA6EA114DC0EBF009ADD15 /* Build configuration list for PBXNativeTarget "iOSHybridTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +452,7 @@
 				50BA6EA314DC0EBF009ADD15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

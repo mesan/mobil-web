@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
+
+-(IBAction)pageInfo;
+
+-(IBAction)lastWebSide;
+
+@property (retain) IBOutlet UIWebView *webView;
 
 @end
