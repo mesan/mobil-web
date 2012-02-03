@@ -3,8 +3,9 @@ package no.mesan.android.mobilweb;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.WebView;
 
-public class HelloAndroidActivity extends Activity {
+public class WebViewController extends Activity {
 
     private static String TAG = "mobilweb";
 
@@ -15,10 +16,13 @@ public class HelloAndroidActivity extends Activity {
      * recently supplied in onSaveInstanceState(Bundle). <b>Note: Otherwise it is null.</b>
      */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate");
         setContentView(R.layout.main);
+
+        final WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView.loadUrl("http://www.google.com");
     }
 
 }
