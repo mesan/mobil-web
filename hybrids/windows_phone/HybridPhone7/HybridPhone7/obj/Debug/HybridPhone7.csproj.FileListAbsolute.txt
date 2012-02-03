@@ -1,0 +1,13 @@
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\ResolveAssemblyReference.cache
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\App.g.i.cs
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\MainPage.g.i.cs
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.g.resources
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\ApplicationIcon.png
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\Background.png
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.dll
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.pdb
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\AppManifest.xaml
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.xap
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.dll
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.pdb
+c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\XapCacheFile.xml
