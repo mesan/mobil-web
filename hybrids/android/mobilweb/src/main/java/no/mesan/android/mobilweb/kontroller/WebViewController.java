@@ -24,6 +24,6 @@ public class WebViewController extends Activity {
         setContentView(R.layout.main);
 
         final WebView myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://www.google.com");
+        myWebView.loadUrl("http://10.0.2.2:8080");
     }
 }
