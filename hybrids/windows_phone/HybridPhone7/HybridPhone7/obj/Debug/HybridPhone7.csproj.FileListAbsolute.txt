@@ -11,3 +11,16 @@ c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7
 c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.dll
 c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.pdb
 c:\users\thomasa\documents\visual studio 2010\Projects\HybridPhone7\HybridPhone7\obj\Debug\XapCacheFile.xml
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\ApplicationIcon.png
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\Background.png
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.dll
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.pdb
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\AppManifest.xaml
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\Bin\Debug\HybridPhone7.xap
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\App.g.i.cs
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\MainPage.g.i.cs
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.g.resources
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.dll
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\HybridPhone7.pdb
+C:\Users\thomasa\mobil-web\hybrids\windows_phone\HybridPhone7\HybridPhone7\obj\Debug\XapCacheFile.xml
