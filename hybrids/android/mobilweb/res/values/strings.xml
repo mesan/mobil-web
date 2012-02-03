@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello mobilweb!</string>
-    <string name="app_name">mobilweb</string>
+  <string name="app_name">Mobil web for Android</string>
 </resources>
