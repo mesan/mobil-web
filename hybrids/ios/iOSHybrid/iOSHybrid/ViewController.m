@@ -67,22 +67,30 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
         return YES;
     }
 }
-
--(IBAction)pageInfo {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
-                                                   message:@"Currently displaying view one" 
-                                                  delegate:self
-                                         cancelButtonTitle:@"OK"
-                                         otherButtonTitles: nil];
-    
-    [alert show];
-    
-}
+//
+//-(IBAction)pageInfo {
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
+//                                                   message:@"Currently displaying view one" 
+//                                                  delegate:self
+//                                         cancelButtonTitle:@"OK"
+//                                         otherButtonTitles: nil];
+//    
+//    [alert show];
+//    
+//}
 
 -(IBAction)lastHjemmeSide {
     NSURL *url =  [[NSURL alloc] initWithString:HJEMMESIDE];    
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:urlRequest];
+}
+
+-(IBAction)lastForrigeSide{
+    [webView goBack];
+}
+
+-(IBAction)lastNesteSide{
+    [webView goForward];
 }
 
 -(BOOL)tilhorerSammeDomene:(NSString *)url {

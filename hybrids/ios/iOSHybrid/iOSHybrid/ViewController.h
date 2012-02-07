@@ -10,9 +10,9 @@
 
 @interface ViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIWebViewDelegate>
 
--(IBAction)pageInfo;
-
 -(IBAction)lastHjemmeSide;
+-(IBAction)lastForrigeSide;
+-(IBAction)lastNesteSide;
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
