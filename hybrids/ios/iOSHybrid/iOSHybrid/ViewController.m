@@ -24,6 +24,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self lastHjemmeSide];
+    webView.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -74,11 +77,20 @@
     
 }
 
--(IBAction)lastWebSide {
-    NSURL *url =  [[NSURL alloc] initWithString:@"http://localhost:8080"];
-//    NSURL *url =  [[NSURL alloc] initWithString:@"http://www.vg.no"];
+-(IBAction)lastHjemmeSide {
+    NSURL *url =  [[NSURL alloc] initWithString:@"http://mobil-web-server.appspot.com/"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:urlRequest];
 }
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+//    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+//        [[UIApplication sharedApplication] openURL:request.URL];
+//        return false;
+//    }
+    return true;
+}
+
 
 @end

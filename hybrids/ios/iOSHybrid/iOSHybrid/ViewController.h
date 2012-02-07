@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
+@interface ViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIWebViewDelegate>
 
 -(IBAction)pageInfo;
 
--(IBAction)lastWebSide;
+-(IBAction)lastHjemmeSide;
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
 @property (retain) IBOutlet UIWebView *webView;
 
