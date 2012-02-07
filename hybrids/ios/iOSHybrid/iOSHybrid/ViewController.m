@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
+
 @implementation ViewController
 @synthesize webView;
 
@@ -78,17 +80,26 @@
 }
 
 -(IBAction)lastHjemmeSide {
-    NSURL *url =  [[NSURL alloc] initWithString:@"http://mobil-web-server.appspot.com/"];
+    NSURL *url =  [[NSURL alloc] initWithString:HJEMMESIDE];    
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:urlRequest];
 }
 
+-(BOOL)tilhorerSammeDomene:(NSString *)url {
+    return [url hasPrefix: HJEMMESIDE];
+}
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-//    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-//        [[UIApplication sharedApplication] openURL:request.URL];
-//        return false;
-//    }
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        NSURL *requestUrl =[request URL]; 
+        NSString *urlSomString = [requestUrl absoluteString];
+        if ([self tilhorerSammeDomene:urlSomString]) {
+            return true;
+        } else  {
+            [[UIApplication sharedApplication] openURL:request.URL];
+            return false;
+        }
+    }
     return true;
 }
 
