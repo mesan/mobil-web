@@ -28,7 +28,7 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self lastHjemmeSide];
-    webView.delegate = self;
+//    webView.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -67,17 +67,6 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
         return YES;
     }
 }
-//
-//-(IBAction)pageInfo {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
-//                                                   message:@"Currently displaying view one" 
-//                                                  delegate:self
-//                                         cancelButtonTitle:@"OK"
-//                                         otherButtonTitles: nil];
-//    
-//    [alert show];
-//    
-//}
 
 -(IBAction)lastHjemmeSide {
     NSURL *url =  [[NSURL alloc] initWithString:HJEMMESIDE];    
