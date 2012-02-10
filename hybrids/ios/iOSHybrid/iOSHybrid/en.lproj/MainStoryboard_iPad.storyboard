@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28A-0c-cdf">
-                                <rect key="frame" x="0.0" y="0.0" width="72" height="37"/>
+                                <rect key="frame" x="93" y="0.0" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="hjem">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" id="QnR-h7-vdK">
-                                <rect key="frame" x="0.0" y="38" width="768" height="966"/>
+                                <rect key="frame" x="0.0" y="52" width="768" height="952"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -66,8 +66,12 @@
                                     <action selector="lastForrigeSide" destination="2" eventType="touchUpInside" id="fsV-i4-MQe"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" image="Mesan segl.png" id="HDl-tQ-Juw">
+                                <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="webView" destination="QnR-h7-vdK" id="Vll-Tf-3nM"/>
@@ -77,6 +81,9 @@
             <point key="canvasLocation" x="-444" y="-232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Mesan segl.png" width="50" height="50"/>
+    </resources>
     <classes>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>

@@ -93,7 +93,8 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
         if ([self tilhorerSammeDomene:urlSomString]) {
             return true;
         } else  {
-            [[UIApplication sharedApplication] openURL:request.URL];
+//            [[UIApplication sharedApplication] openURL:request.URL];
+            [[UIApplication sharedApplication] openURL:[request URL]];
             return false;
         }
     }
