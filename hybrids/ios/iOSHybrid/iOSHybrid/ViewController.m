@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
+//static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
+static NSString *const HJEMMESIDE = @"http://localhost:8080/modernizr.html";
+static NSString *const JAVASCRIPT = @"javascript:document.getElementById('harCanvas').html = 'endret';";
 
 @implementation ViewController
 @synthesize webView;
@@ -74,6 +76,12 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
     [webView loadRequest:urlRequest];
 }
 
+-(IBAction)lastJavascript {
+    NSURL *url =  [[NSURL alloc] initWithString:JAVASCRIPT];    
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
+    [webView loadRequest:urlRequest];
+}
+
 -(IBAction)lastForrigeSide{
     [webView goBack];
 }
@@ -93,10 +101,11 @@ static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
         if ([self tilhorerSammeDomene:urlSomString]) {
             return true;
         } else  {
-//            [[UIApplication sharedApplication] openURL:request.URL];
             [[UIApplication sharedApplication] openURL:[request URL]];
             return false;
         }
+    } else if (navigationType == UIWebViewNavigationTypeOther) {
+        // her kan vi kanskje ta imot javascript
     }
     return true;
 }
