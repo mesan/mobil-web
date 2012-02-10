@@ -1,0 +1,15 @@
+.no-canvas #harCanvas {
+  background: red;
+}
+
+.canvas #harCanvas {
+   background: green;
+ }
+
+.no-touch #harTouch {
+  background: red;
+}
+
+.touch #harTouch {
+  background: green;
+}
