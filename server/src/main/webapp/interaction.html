@@ -15,6 +15,7 @@
 			function submitform()
 			{
 				var name = document.forms.toast.message.value;	
+				window.external.Notify(name);
 				AndroidApi.showToast("Hei!");				
 			}
 		</script>
