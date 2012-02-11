@@ -8,12 +8,16 @@
 
 #import "ViewController.h"
 
-//static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
-static NSString *const HJEMMESIDE = @"http://localhost:8080/modernizr.html";
-static NSString *const JAVASCRIPT = @"javascript:document.getElementById('harCanvas').html = 'endret';";
+static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
+//static NSString *const HJEMMESIDE = @"http://localhost:8080/modernizr.html";
+
+static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHTML = 'haha dette virker';"
+    "document.title;";    
 
 @implementation ViewController
 @synthesize webView;
+@synthesize testKnapp;
+@synthesize testLabel;
 
 
 - (void)didReceiveMemoryWarning
@@ -77,9 +81,13 @@ static NSString *const JAVASCRIPT = @"javascript:document.getElementById('harCan
 }
 
 -(IBAction)lastJavascript {
-    NSURL *url =  [[NSURL alloc] initWithString:JAVASCRIPT];    
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-    [webView loadRequest:urlRequest];
+    NSString *resultat = [webView stringByEvaluatingJavaScriptFromString:JAVASCRIPT];  
+    [testLabel setText:resultat];
+}
+
+-(IBAction)hentDocumentTitle {
+    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    [testLabel setText:title];
 }
 
 -(IBAction)lastForrigeSide{
@@ -109,6 +117,5 @@ static NSString *const JAVASCRIPT = @"javascript:document.getElementById('harCan
     }
     return true;
 }
-
 
 @end
