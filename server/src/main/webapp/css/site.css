@@ -1,0 +1,12 @@
+.mobileLink {
+		display: none;
+}		
+
+@media screen and (max-width: 600px) {
+	.mobileLink {
+		display: inline;
+	}
+	.hideOnMobile {
+		display: none;
+	}	
+}
