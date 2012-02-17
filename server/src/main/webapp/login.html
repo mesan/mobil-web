@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <link href="/style/bootstrap.css" rel="stylesheet">
   <link href="style/bootstrap.responsive.css" rel="stylesheet">
-  <script src="/script/libs/bootstrap.js"></script>
-  <script src="js/src/offline_brukernavn.js"></script>
   <script src="script/libs/jquery-1.7.1.js"></script>
+  <script src="/script/libs/bootstrap.js"></script>
+  <script src="script/offline_brukernavn.js"></script>
 
   <title>Loginsia</title>
 </head>
@@ -40,8 +40,12 @@
   </div>
 </body>
 <script>
-  function settBrukernavn(brukernavn) {
-    jQuery('#brukernavn').val(brukernavn);
+  function visBrukernavn(bruker) {
+    jQuery('#brukernavn').val(bruker.navn);
+  }
+
+  function brukerLagret() {
+    window.location = 'index.html';
   }
 
   jQuery(document).ready(function(){
@@ -49,11 +53,11 @@
     var submitKnapp = jQuery('#submitKnapp');
     submitKnapp.click(function() {
       var brukernavn = jQuery('#brukernavn').val();
-      MesanOfflineBruker.lagreBruker(brukernavn);
+      MesanOfflineBruker.lagreBruker(brukernavn, brukerLagret);
       return false;
     });
 
-    MesanOfflineBruker.hentBrukernavn(settBrukernavn);
+    MesanOfflineBruker.hentBruker(visBrukernavn);
 
   });
 

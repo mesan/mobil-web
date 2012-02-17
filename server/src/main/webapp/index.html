@@ -10,10 +10,12 @@
     <link href="/style/bootstrap.css" rel="stylesheet">
     <link href="/style/bootstrap.responsive.css" rel="stylesheet">
     <link href="/style/site.css" rel="stylesheet">
+    <script src="script/libs/jquery-1.7.1.js"></script>
     <script type="text/javascript"	src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/script/libs/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/libs/jquery-hash-change.js"></script>
+    <script type="text/javascript" src="/script/libs/jquery-hash-change.js"></script>
     <script type="text/javascript" src="/script/page_section_controller.js"></script>
+    <script src="script/offline_brukernavn.js"></script>
   </head>
 
   <body>
@@ -41,7 +43,7 @@
           <!-- Høyre side -->
           <aside class="span6" style="text-align: right;">
             <p id="headerNavn">
-              <a href="mailto:sarah@mesan.no">Sara M Hellsten</a>
+              <a id="brukernavn" href="">-</a>
             </p>
             <p id="headerGjeld">Din totale gjeld: 1 337 133</p>
           </aside>
@@ -89,14 +91,18 @@
 
     </div>
     <script>
-      /*
-       if (Modernizr.mq('only screen and (max-width: 480px)')) {
-       Modernizr.load('/mobile.js');
-       } else if (Modernizr.mq('only screen and (max-width: 768px)')) {
-       Modernizr.load('/tablet.js');
-       } else {
-       Modernizr.load('/desktop.js');
-       }*/
+      function visBrukernavn(bruker) {
+        jQuery('#brukernavn').html(bruker.navn);
+      }
+
+      jQuery(document).ready(function(){
+        console.log('Ready start');
+        MesanOfflineBruker.hentBruker(visBrukernavn);
+
+        console.log('Ready slutt');
+
+      });
+
     </script>
   </body>
 </html>
