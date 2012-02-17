@@ -8,11 +8,12 @@
 	}
 	.hideOnMobile {
 		display: none;
-	}	
+	}
 }
 
 .nav-list a {
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .content_div {
@@ -23,21 +24,21 @@
     display: block;
 }
 
-table { 
-	width:100%; 
+table {
+	width:100%;
 }
 
-table caption { 
-	text-align:left;  
+table caption {
+	text-align:left;
 }
-    
-table thead th { 
-	text-align:left; 
-	border-bottom-width:1px; 
-	border-top-width:1px; 
+
+table thead th {
+	text-align:left;
+	border-bottom-width:1px;
+	border-top-width:1px;
 }
-    
-table th, td { 
-	text-align:left; 
+
+table th, td {
+	text-align:left;
 	padding:6px;
-} 
+}
