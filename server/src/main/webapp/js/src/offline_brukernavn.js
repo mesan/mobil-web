@@ -15,46 +15,57 @@ MesanOfflineBruker = {};
  * visningsnavn: mobile-web offline bruker
  * størrelse på databasen: 100 bytes
  */
-var db = window.openDatabase("mobile-web", "", "mobile-web offline bruker", 100);
+MesanOfflineBruker.db = window.openDatabase("mobile-web", "", "mobile-web offline bruker", 1000);
 
-MesanOfflineBruker.reportError(source, message) = function {
-  // report error
+//MesanOfflineBruker.localStorage = window.localStorage();
+
+MesanOfflineBruker.reportError = function(source, message) {
+  alert('Skjærpings!');
 }
 
-MesanOfflineBruker.hentBrukernavn() = function() {
+MesanOfflineBruker.hentBrukernavn = function(settBrukernavn) {
   var brukernavn = "";
-
-  db.transaction(function(tx) {
+  MesanOfflineBruker.db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS bruker(navn TEXT)', []);
     tx.executeSql('SELECT * FROM bruker', [], function(tx, rs) {
       for(var i = 0; i < rs.rows.length; i++) {
-        brukernavn += rs.rows[i];
+        settBrukernavn(rs.rows[i].navn);
+        brukernavn = brukernavn + (rs.rows[i].navn);
       }
     });
-  });
+ });
   return brukernavn;
+
+//  var brukernavn = localStorage.getItem('brukernavn');
+//  return brukernavn;
 }
 
 MesanOfflineBruker.lagreBruker = function(brukernavn) {
-  db.transaction(function(tx) {
+  MesanOfflineBruker.nullstillBrukere();
+  MesanOfflineBruker.db.transaction(function(tx) {
     tx.executeSql('INSERT INTO bruker VALUES(?)', [ brukernavn ],
         function(tx, rs) {
-          // …
         },
         function(tx, error) {
-          reportError('sql', error.message);
+          MesanOfflineBruker.reportError('sql', error.message);
         });
   });
+//  MesanOfflineBruker.localStorage.setItem('brukernavn', brukernavn);
 }
 
 MesanOfflineBruker.nullstillBrukere = function() {
-  db.transaction(function(tx) {
+  MesanOfflineBruker.db.transaction(function(tx) {
     tx.executeSql('DELETE FROM bruker', [ ],
         function(tx, rs) {
           // …
         },
         function(tx, error) {
-          reportError('sql', error.message);
+          MesanOfflineBruker.reportError('sql', error.message);
         });
   });
 }
+
+
+
+
+
