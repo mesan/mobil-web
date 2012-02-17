@@ -2,16 +2,36 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap.responsive.css" rel="stylesheet">
+  <script src="/script/libs/bootstrap.js"></script>
 
   <title>Loginsia</title>
 </head>
 <body>
+
+<div class="container-fluid">
+    <header class="row-fluid">
+      <h1>Lånekassen</h1>
+    </header>
+
+    <div class="row-fluid">
+      <div class="span6">
+        <a class="btn btn-info" href="javascript: history.back();"><i class="icon-arrow-left"></i></a>
+      </div>
+      <div class="span6" style="text-align: right;">
+        <p id="headerNavn"><a href="mailto:sarah@mesan.no">-</a></p>
+        <p id="headerGjeld">Din totale gjeld: 1 337 133</p>
+      </div>
+    </div>
+
   <section>
     <article>
-      <header>Login!</header>
 
       <form id="loginSkjema">
-        <input type="text" id="brukernavn">
+        <input type="text" placeholder="brukernavn" id="brukernavn" />
+
+        <input type="submit" value="Logg inn" />
       </form>
     </article>
   </section>
