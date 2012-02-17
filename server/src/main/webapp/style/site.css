@@ -1,14 +1,18 @@
 .mobileLink {
 		display: none;
-}		
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
 	.mobileLink {
 		display: inline;
 	}
 	.hideOnMobile {
 		display: none;
 	}	
+}
+
+.nav-list a {
+  white-space: nowrap;
 }
 
 .content_div {

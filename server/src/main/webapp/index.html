@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Über Lånekassen</title>
+    <meta charset="utf-8">
     <meta name="description" content="" />
     <meta name="author" content="Christian, Thomas, Edgeir (team Über)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/style/bootstrap.css" rel="stylesheet">
     <link href="/style/bootstrap.responsive.css" rel="stylesheet">
     <link href="/style/site.css" rel="stylesheet">
@@ -17,64 +19,72 @@
   <body>
 
     <div class="container-fluid">
-      <header class="row-fluid">
-        <h1>Lånekassen</h1>
+      <header>
+        <!-- Rad 1 -->
+        <div class="row-fluid">
+          <h1>Lånekassen</h1>
+        </div>
+
+        <!-- Rad 2 -->
+        <div class="row-fluid">
+          <!-- Venstre side -->
+          <nav class="span6">
+            <!-- Her er det ikke en knapp -->
+            &#160;
+          </nav>
+
+          <!-- Loginlink -->
+          <div class="span6" style="text-align: right;">
+            <a id="login" href="login.html">Logg inn</a>
+          </div>
+
+          <!-- Høyre side -->
+          <aside class="span6" style="text-align: right;">
+            <p id="headerNavn">
+              <a href="mailto:sarah@mesan.no">Sara M Hellsten</a>
+            </p>
+            <p id="headerGjeld">Din totale gjeld: 1 337 133</p>
+          </aside>
+        </div>
       </header>
 
+      <!-- Rad 3 - meny og innhold -->
       <div class="row-fluid">
-        <div class="span6">
-          <!-- Her er det ikke en knapp -->
-          &#160;
-        </div>
 
-        <!-- Loginlink -->
-        <div class="span6" style="text-align: right;">
-          <a id="login" href="login.html">Logg inn</a>
-        </div>
-
-        <div class="span6" style="text-align: right;">
-          <p id="headerNavn">
-            <a href="mailto:sarah@mesan.no">-</a>
-          </p>
-          <p id="headerGjeld">Din totale gjeld: 1 337 133</p>
-        </div>
-      </div>
-
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="hideOnMobile" id="menu" data-role="mobile-page">
-
-            <nav class="well sidebar-nav">
-              <ul class="nav nav-list">
-                <li class="active"><a href="#innhold"><i class="icon-home"></i> Hovedsiden</a></li>
-                <li><a href="#"><i class="icon-envelope"></i> Postkasse</a></li>
-                <li><a href="#"><i class="icon-glass"></i> Støtte</a></li>
-                <li><a href="kalkulator.html"><i class="icon-th"></i>
-                  Nedbetalingskalkulator</a></li>
-                <li><a href="#"><i class="icon-random"></i> Rentesatser</a></li>
-                <li><a href="#"><i class="icon-info-sign"></i> Info</a></li>
-              </ul>
-            </nav>
+        <!-- Meny -->
+        <nav class="span3">
+          <div class="hideOnMobile well sidebar-nav" id="menu" data-role="mobile-page">
+            <ul class="nav nav-list">
+              <li class="active"><a href="#innhold"><i class="icon-home"></i> Hovedsiden</a></li>
+              <li><a href="#"><i class="icon-envelope"></i> Postkasse</a></li>
+              <li><a href="#"><i class="icon-glass"></i> Støtte</a></li>
+              <li><a href="kalkulator.html"><i class="icon-th"></i>Nedbetalingskalkulator</a></li>
+              <li><a href="#"><i class="icon-random"></i> Rentesatser</a></li>
+              <li><a href="#"><i class="icon-info-sign"></i> Info</a></li>
+            </ul>
           </div>
-        </div>
-        <div id="innhold" data-role="mobile-page">
-          <div class="span9">
+        </nav>
+
+        <!-- Innhold -->
+        <section class="span9">
+          <article id="innhold" data-role="mobile-page">
             <a class="mobileLink" href="#menu">Tilbake</a>
             <p>
               <b>Bli gjeldsslave med oss i Lånekassen!</b>
             </p>
             <a class="mobileLink" href="#innhold2">Til side 2</a>
-          </div>
-        </div>
-        <div id="innhold2" class="hideOnMobile" data-role="mobile-page">
-          <div class="span9">
+          </article>
+
+          <article id="innhold2" class="hideOnMobile" data-role="mobile-page">
             <a class="mobileLink" href="#innhold">Tilbake</a>
             <p>
               <b>Innhold fra Lånekassen som kommer på side 2 på en mobil!</b>
             </p>
-          </div>
-        </div>
+          </article>
+        </section>
       </div>
+
+      <!-- Rad 4 -->
       <footer class="row-fluid" style="text-align: center;">Copyright 2012 Mesan AS</footer>
 
     </div>
