@@ -102,20 +102,35 @@ static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHT
     return [url hasPrefix: HJEMMESIDE];
 }
 
+-(BOOL)erIPhoneKall:(NSURL*)url {
+    return ([url.scheme isEqual:@"iOS"] || [url.scheme isEqual:@"ios"]);
+}
+
+//  Webview eventer
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         NSURL *requestUrl =[request URL]; 
         NSString *urlSomString = [requestUrl absoluteString];
         if ([self tilhorerSammeDomene:urlSomString]) {
             return true;
+        } else if ([self erIPhoneKall:requestUrl]) {
+//            if ([[UIApplication sharedApplication]canOpenURL:requestUrl]) {
+//                [[UIApplication sharedApplication]openURL:requestUrl];
+//                return NO;
+//            }
+//            utfør appfunksjon
+            return false;
         } else  {
             [[UIApplication sharedApplication] openURL:[request URL]];
             return false;
         }
-    } else if (navigationType == UIWebViewNavigationTypeOther) {
-        // her kan vi kanskje ta imot javascript
     }
     return true;
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    
 }
 
 @end
