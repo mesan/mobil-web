@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link href="/css/bootstrap.css" rel="stylesheet">
-  <link href="/css/bootstrap.responsive.css" rel="stylesheet">
+  <link href="/style/bootstrap.css" rel="stylesheet">
+  <link href="style/bootstrap.responsive.css" rel="stylesheet">
   <script src="/script/libs/bootstrap.js"></script>
+  <script src="js/src/offline_brukernavn.js"></script>
+  <script src="script/libs/jquery-1.7.1.js"></script>
 
   <title>Loginsia</title>
 </head>
@@ -31,9 +33,30 @@
       <form id="loginSkjema">
         <input type="text" placeholder="brukernavn" id="brukernavn" />
 
-        <input type="submit" value="Logg inn" />
+        <input id="submitKnapp" type="submit" value="Logg inn" />
       </form>
     </article>
   </section>
+  </div>
 </body>
+<script>
+  function settBrukernavn(brukernavn) {
+    jQuery('#brukernavn').val(brukernavn);
+  }
+
+  jQuery(document).ready(function(){
+
+    var submitKnapp = jQuery('#submitKnapp');
+    submitKnapp.click(function() {
+      var brukernavn = jQuery('#brukernavn').val();
+      MesanOfflineBruker.lagreBruker(brukernavn);
+      return false;
+    });
+
+    MesanOfflineBruker.hentBrukernavn(settBrukernavn);
+
+  });
+
+</script>
+
 </html>
