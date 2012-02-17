@@ -15,7 +15,7 @@
     <script type="text/javascript" src="/script/libs/bootstrap.js"></script>
     <script type="text/javascript" src="/script/libs/jquery-hash-change.js"></script>
     <script type="text/javascript" src="/script/page_section_controller.js"></script>
-    <script src="script/offline_brukernavn.js"></script>
+    <script src="script/lokal_bruker.js"></script>
   </head>
 
   <body>
@@ -91,16 +91,15 @@
 
     </div>
     <script>
-      function visBrukernavn(bruker) {
-        jQuery('#brukernavn').html(bruker.navn);
+      function visBrukernavn() {
+        var brukernavn = LokalBruker.hentBruker();
+        if (brukernavn) {
+          jQuery('#brukernavn').html(brukernavn);
+        }
       }
 
       jQuery(document).ready(function(){
-        console.log('Ready start');
-        MesanOfflineBruker.hentBruker(visBrukernavn);
-
-        console.log('Ready slutt');
-
+        visBrukernavn();
       });
 
     </script>
