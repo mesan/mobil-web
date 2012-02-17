@@ -31,7 +31,7 @@ Ext.onReady(function(){
     });
 
     Ext.create('Ext.form.Panel', {
-        width: 200,
+        width: 300,
         height: 100,
         bodyPadding: 10,
         renderTo: 'radio-buttons',

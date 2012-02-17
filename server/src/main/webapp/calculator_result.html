@@ -1,30 +1,90 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
-<title>Componets</title>
-
-<!-- Sencha Touch CSS -->
-<link rel="stylesheet" href="css/sencha-touch.css" type="text/css">
-
-<!-- Sencha Touch JS -->
-<script type="text/javascript" src="js/sencha-touch-debug.js"></script>
-<script type="text/javascript" src="js/calculator_result.js"></script>
-
-<style>
-.card1,.card2 {
-	text-align: center;
-	color: #204167;
-	text-shadow: #3F80CA 0 1px 0;
-	font-size: 72px;
-	padding-top: 100px;
-}
-</style>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+	<link href="/css/site.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>	
+	
+	<title>Detaljert informasjon om netbetaling av lån</title>
 </head>
 <body>
+	<body>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn-active" data-href="a">Graf</a></li>
+				<li><a href="#" data-href="b">Tabell</a></li>
+			</ul>
+		</div>
+		
+		<div id="a" class="content_div">
+			<div id="chart2" style="width:240px;height:240px"></div>
+		</div>
+		
+		<div id="b" class="content_div">
+			<table summary="This table lists all the JetBlue flights."> 
+				<caption>Oversikt over nedbetaling</caption> 
+				<thead> 
+					<tr> 
+						<th scope="col">Beløp:</th>  
+						<th scope="col">År:</th>  
+						<th scope="col">Rente:</th>  
+					</tr> 
+			  </thead> 
+			  <tfoot> 
+					<tr> 
+						<td colspan="5">Totalt: 1337 MNOK</td> 
+					</tr> 
+				</tfoot> 
+				<tbody> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2012</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2013</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2014</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2015</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2016</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2017</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2018</td> 
+						<td>2,5 %</td> 
+				    </tr>  
+				</tbody> 
+			</table> 
+		</div>
 
-</body>
+		<script type='text/javascript'>
+			$('[data-role="navbar"]').delegate('[data-role="navbar"] a', 'click', function () {
+				$(this).addClass('ui-btn-active');
+				$('.content_div').hide();
+				$('#' + $(this).attr('data-href')).show();
+			});
+
+		</script>
+	</body>
 </html>
