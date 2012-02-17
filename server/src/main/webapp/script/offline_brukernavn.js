@@ -23,32 +23,37 @@ MesanOfflineBruker.reportError = function(source, message) {
   alert('Skjærpings!');
 }
 
-MesanOfflineBruker.hentBrukernavn = function(settBrukernavn) {
-  var brukernavn = "";
+MesanOfflineBruker.hentBruker = function(hentBrukerFerdig) {
+  console.log('HENT');
+  var bruker = "";
   MesanOfflineBruker.db.transaction(function(tx) {
     tx.executeSql('CREATE TABLE IF NOT EXISTS bruker(navn TEXT)', []);
     tx.executeSql('SELECT * FROM bruker', [], function(tx, rs) {
+      console.log('før forløkke: ');
       for(var i = 0; i < rs.rows.length; i++) {
-        settBrukernavn(rs.rows[i].navn);
-        brukernavn = brukernavn + (rs.rows[i].navn);
+        console.log('Hentet navn: ' + rs.rows[i].navn);
+        hentBrukerFerdig(rs.rows[i]);
       }
     });
  });
-  return brukernavn;
 
 //  var brukernavn = localStorage.getItem('brukernavn');
 //  return brukernavn;
 }
 
-MesanOfflineBruker.lagreBruker = function(brukernavn) {
+MesanOfflineBruker.lagreBruker = function(brukernavn, lagreBrukerFerdig) {
+  console.log('LAGRE');
   MesanOfflineBruker.nullstillBrukere();
   MesanOfflineBruker.db.transaction(function(tx) {
     tx.executeSql('INSERT INTO bruker VALUES(?)', [ brukernavn ],
         function(tx, rs) {
+          lagreBrukerFerdig();
         },
         function(tx, error) {
           MesanOfflineBruker.reportError('sql', error.message);
         });
+    console.log("Lagret bruker: " + brukernavn);
+
   });
 //  MesanOfflineBruker.localStorage.setItem('brukernavn', brukernavn);
 }
