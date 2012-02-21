@@ -22,6 +22,10 @@
 		50BA6E9814DC0EBF009ADD15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50BA6E9614DC0EBF009ADD15 /* InfoPlist.strings */; };
 		50BA6E9B14DC0EBF009ADD15 /* iOSHybridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA6E9A14DC0EBF009ADD15 /* iOSHybridTests.m */; };
 		9581BB5014E533CC00822A7B /* Mesan segl.png in Resources */ = {isa = PBXBuildFile; fileRef = 9581BB4F14E533CC00822A7B /* Mesan segl.png */; };
+		95FB891214EEE93E002A16EF /* Mesan segl.57.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FB891114EEE93E002A16EF /* Mesan segl.57.png */; };
+		95FB891514EEE946002A16EF /* Mesan segl.114.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FB891414EEE946002A16EF /* Mesan segl.114.png */; };
+		95FB891714EEEA20002A16EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FB891614EEEA20002A16EF /* Default.png */; };
+		95FB891914EEEA29002A16EF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95FB891814EEEA29002A16EF /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		50BA6E9914DC0EBF009ADD15 /* iOSHybridTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSHybridTests.h; sourceTree = "<group>"; };
 		50BA6E9A14DC0EBF009ADD15 /* iOSHybridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSHybridTests.m; sourceTree = "<group>"; };
 		9581BB4F14E533CC00822A7B /* Mesan segl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Mesan segl.png"; path = "../../../../../../../Downloads/Mesanlogo/Mesan segl.png"; sourceTree = "<group>"; };
+		95FB891114EEE93E002A16EF /* Mesan segl.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mesan segl.57.png"; sourceTree = "<group>"; };
+		95FB891414EEE946002A16EF /* Mesan segl.114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mesan segl.114.png"; sourceTree = "<group>"; };
+		95FB891614EEEA20002A16EF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95FB891814EEEA29002A16EF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 		50BA6E5D14DC0EBE009ADD15 = {
 			isa = PBXGroup;
 			children = (
+				95FB891814EEEA29002A16EF /* Default@2x.png */,
+				95FB891614EEEA20002A16EF /* Default.png */,
+				95FB891414EEE946002A16EF /* Mesan segl.114.png */,
+				95FB891114EEE93E002A16EF /* Mesan segl.57.png */,
 				9581BB5214E5354800822A7B /* Bilder */,
 				50BA6E7214DC0EBF009ADD15 /* iOSHybrid */,
 				50BA6E9314DC0EBF009ADD15 /* iOSHybridTests */,
@@ -239,6 +251,10 @@
 				50BA6E8014DC0EBF009ADD15 /* MainStoryboard_iPhone.storyboard in Resources */,
 				50BA6E8314DC0EBF009ADD15 /* MainStoryboard_iPad.storyboard in Resources */,
 				9581BB5014E533CC00822A7B /* Mesan segl.png in Resources */,
+				95FB891214EEE93E002A16EF /* Mesan segl.57.png in Resources */,
+				95FB891514EEE946002A16EF /* Mesan segl.114.png in Resources */,
+				95FB891714EEEA20002A16EF /* Default.png in Resources */,
+				95FB891914EEEA29002A16EF /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
