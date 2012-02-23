@@ -14,12 +14,12 @@ static NSString *const DEVICEEVENT = @".iOS";
 //static NSString *const HJEMMESIDE = @"http://www.progressiv.no";
 
 
-static NSString *const DOMENE = @"http://localhost:8181/";
-static NSString *const HJEMMESIDE = @"http://localhost:8181/index.html";
+//static NSString *const DOMENE = @"http://localhost:8181/";
+//static NSString *const HJEMMESIDE = @"http://localhost:8181/index.html";
 ///static NSString *const HJEMMESIDE = @"http://localhost:8181/modernizr.html";
 
-//static NSString *const DOMENE = @"http://mobil-web-server.appspot.com/";
-//static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
+static NSString *const DOMENE = @"http://mobil-web-server.appspot.com/";
+static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
 //static NSString *const HJEMMESIDE = @"http://html5test.com/";
 
 static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHTML = 'haha dette virker';"
