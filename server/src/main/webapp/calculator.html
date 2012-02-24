@@ -4,58 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title>Kalkulator</title>
-
-    <!-- Sencha Touch CSS -->
-
-    <link rel="stylesheet" href="style/slider.css" type="text/css">
-    <link rel="stylesheet" href="style/ext-all.css" type="text/css">
-    <link rel="stylesheet" href="style/example.css" type="text/css">
-
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css" media="screen">
 	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js"	data-dojo-config="async: true, isDebug: true"></script>
 
-    <!-- Sencha Touch JS -->
-    <script type="text/javascript" src="script/libs/sencha-touch-debug.js"></script>
-
-    <!-- Calculator.js -->
-    <script type="text/javascript" src="script/libs/ext-all-debug.js"></script>
-    <script type="text/javascript" src="script/calculator.js"></script>
-
-	<script type="text/javascript">
-	require([
-		"dojo/ready",
-		"dijit/form/HorizontalSlider",
-		"dojo/dom", // for inserting value in TextBox example
-		"dijit/form/TextBox", // this we only include to make an example with TextBox
-		"dojo/parser" // parser because of TextBox decoration
-		], function(ready, HorizontalSlider, dom){
-			ready(function(){
-				var slider = new HorizontalSlider({
-					name: "slider",
-					value: 50,
-					minimum: 0,
-					maximum: 100,
-					intermediateChanges: true,
-					style: "width:300px;",
-					onChange: function(value){
-						dom.byId("sliderValue").value = value;
-					}
-				}, "slider");
-			});
-		});
-	</script>
+	<script type="text/javascript" src="/script/calculator.js"></script>
 </head>
 <body>
-    <h1>Lånebeløp : xyz</h1>
-    <div id = "basic-slider-lanebelop"></div>
-    <h1>Nedbetalingstid : xyz</h1>
-    <div id = "basic-slider-nedbetalingstid"></div>
-    <div id = "radio-buttons"></div>
-    <input type="button" value="Regne"/>
-	
-	<div  style="margin:20px; padding 20px;">
-		<div id="slider"></div>
-		<p><input type="text" id="sliderValue" data-dojo-type="dijit/form/TextBox" /></p>
+    <h1>Lånebeløp : <span id="sliderValue1"> </span> </h1>
+    <div id="slider1"></div>
+    <h1>Nedbetalingstid : <span id="sliderValue2"> </span> </h1>
+    <div id="slider2"></div>
+    <div id="radio-buttons"> 
+		<input type="radio" checked="checked" /> Flytende rente <br />
+		<input type="radio"/> Fast rente 3 år <br />
+		<input type="radio"/> Fast rente 5 år
 	</div>
+    <input type="button" value="Regn ut"/>
 </body>
 </html>

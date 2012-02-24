@@ -1,4 +1,4 @@
-require([
+﻿require([
 				 // Require the basic chart class
 				"dojox/charting/Chart",
 
@@ -45,7 +45,7 @@ require([
 				chart.addAxis("y", { min: 0, max: 550000, vertical: true, fixLower: "major", fixUpper: "major" });
 
 				// Add the series of data
-				chart.addSeries("Nedbetaling av l�n",chartData);
+				chart.addSeries("Nedbetaling av lån",chartData);
 				
 				// Create the tooltip
 				var tip = new Tooltip(chart,"default");
