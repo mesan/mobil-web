@@ -1,24 +1,213 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">       
     <title>Kalkulator</title>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css" media="screen">
 	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js"	data-dojo-config="async: true, isDebug: true"></script>
 
 	<script type="text/javascript" src="/script/calculator.js"></script>
-</head>
-<body>
-    <h1>Lånebeløp : <span id="sliderValue1"> </span> </h1>
+    <meta charset="utf-8">
+    <meta name="description" content="" />
+    <meta name="author" content="Christian, Thomas, Edgeir (team Über)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/bootstrap.css" rel="stylesheet"> 
+    <link href="/style/bootstrap.responsive.css" rel="stylesheet">
+    <link href="/style/site.css" rel="stylesheet">
+    <script src="script/libs/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="/script/libs/bootstrap.js"></script>
+    <script type="text/javascript" src="/script/libs/jquery-hash-change.js"></script>
+    <script type="text/javascript" src="/script/page_section_controller.js"></script>
+    <script src="script/lokal_bruker.js"></script>
+    
+    
+    <link href="http://demos.dojotoolkit.org/demos/touch/demo.css" rel="stylesheet">
+	<link href="/style/site.css" rel="stylesheet">
+	 <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>	-->
+	    <script type="text/javascript" src="/script/calculator_result_chart.js"></script>
+	
+	
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <header>
+        <!-- Rad 1 -->
+        <div class="row-fluid">
+          <h1>Lånekassen</h1>
+        </div>
+
+        <!-- Rad 2 -->
+        <div class="row-fluid">
+          <!-- Venstre side -->
+          <nav class="span6">
+            <!-- Her er det ikke en knapp -->
+            &#160;
+          </nav>
+
+          <!-- Loginlink -->
+          <aside class="span6" style="text-align: right;">
+            <a id="login" href="login.html">Logg inn</a>
+          </aside>
+
+          <!-- Høyre side -->
+          <aside class="span6" style="text-align: right;">
+            <p id="headerNavn">
+              <a id="brukernavn" href="">-</a>
+            </p>
+            <p id="headerGjeld">Din totale gjeld: 1 337 133</p>
+          </aside>
+        </div>
+      </header>
+
+      <!-- Rad 3 - meny og innhold -->
+      <div class="row-fluid">
+
+        <!-- Meny -->
+        <nav class="span3">
+          <div class="well sidebar-nav hideOnMobile" id="menu" data-role="mobile-page">
+            <ul class="nav nav-list">
+              <li><a href="index.html#innhold"><i class="icon-home"></i> Hovedsiden</a></li>
+              <li><a href="#"><i class="icon-envelope"></i> Postkasse</a></li>
+              <li><a href="#"><i class="icon-glass"></i> Støtte</a></li>
+              <li class="active"><a href="calculator.html"><i class="icon-th"></i>Nedbetalingskalkulator</a></li>
+              <li><a href="calculator_result.html"><i class="icon-random"></i> Rentesatser</a></li>
+              <li><a href="http://www.progressiv.no"><i class="icon-info-sign"></i> Info</a></li>
+              <li><a href="http://hvasomhelst.hvemsomhelst.hvorsomhelst/hvillkensomhelst.iOS"><i class="icon-info-sign"></i> kjør devicekode</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Innhold -->
+        <section class="span9">
+          <article id="innhold" data-role="mobile-page">
+            <a class="mobileLink" href="#menu">Tilbake</a>
+              <h1>Lånebeløp : <span id="sliderValue1"> </span> </h1>
     <div id="slider1"></div>
     <h1>Nedbetalingstid : <span id="sliderValue2"> </span> </h1>
     <div id="slider2"></div>
     <div id="radio-buttons"> 
-		<input type="radio" checked="checked" /> Flytende rente <br />
-		<input type="radio"/> Fast rente 3 år <br />
-		<input type="radio"/> Fast rente 5 år
+		<input name="radio1" type="radio" checked="checked" /> Flytende rente <br />
+		<input name="radio1" type="radio"/> Fast rente 3 år <br />
+		<input name="radio1" type="radio"/> Fast rente 5 år
 	</div>
-    <input type="button" value="Regn ut"/>
-</body>
+    <input type="button" value="Regn ut" id="btnCalculate" />
+         
+          </article>
+
+          <article id="innhold2" class="hideOnMobile hide" data-role="mobile-page">
+            <a class="mobileLink" href="#innhold">Tilbake</a>
+            <p>
+              
+                 <div class="tabbable">
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="#1" data-toggle="tab">Graf</a></li>
+    <li><a href="#2" data-toggle="tab">Tabell</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="1">
+    <div id="a" class="content_div claro" >
+			<div id="chartNode" style="width:100%; height:100%;"></div>
+			<div id="legend"></div>
+		</div>
+  
+  
+    </div>
+    <div class="tab-pane" id="2">		
+		
+		<div id="b" class="content_div">
+			<table summary="This table lists all the JetBlue flights."> 
+				<caption>Oversikt over nedbetaling</caption> 
+				<thead> 
+					<tr> 
+						<th scope="col">Beløp:</th>  
+						<th scope="col">År:</th>  
+						<th scope="col">Rente:</th>  
+					</tr> 
+			  </thead> 
+			  <tfoot> 
+					<tr> 
+						<td colspan="5">Totalt: 1337 MNOK</td> 
+					</tr> 
+				</tfoot> 
+				<tbody> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2012</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2013</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2014</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2015</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2016</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2017</td> 
+						<td>2,5 %</td> 
+				    </tr> 
+				    <tr> 
+						<th scope="row">1337</th> 
+						<td>2018</td> 
+						<td>2,5 %</td> 
+				    </tr>  
+				</tbody> 
+			</table> 
+		</div>
+		
+    </div>
+    </div>
+    </div>
+           
+
+		<script type='text/javascript'>
+			$('[data-role="navbar"]').delegate('[data-role="navbar"] a', 'click', function () {
+				$(this).addClass('ui-btn-active');
+				$('.content_div').hide();
+				$('#' + $(this).attr('data-href')).show();
+			});
+
+		</script>
+		
+              
+              
+         
+          </article>
+        </section>
+      </div>
+
+      <!-- Rad 4 -->
+      <footer class="row-fluid" style="text-align: center;">Copyright 2012 Mesan AS</footer>
+
+    </div>
+    <script type="text/javascript">
+    (function(){
+    	$("#btnCalculate").click(function(){
+    		$("#innhold2").removeClass("hide");
+    		window.location = "#innhold2";
+    	})
+    }())
+    
+    </script>
+   
+  </body>
 </html>
+
