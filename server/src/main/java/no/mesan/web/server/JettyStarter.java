@@ -17,7 +17,7 @@ public final class JettyStarter {
     @SuppressWarnings({ "unchecked" })
     public static void main(final String[] args) throws Exception {
 
-        SERVER = new Server(8181);
+        SERVER = new Server(8080);
 
         final WebAppContext context = new WebAppContext();
         context.setServer(SERVER);

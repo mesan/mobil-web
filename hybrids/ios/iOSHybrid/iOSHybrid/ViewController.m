@@ -8,8 +8,19 @@
 
 #import "ViewController.h"
 
+static NSString *const DEVICEEVENT = @".iOS";
+
+//static NSString *const DOMENE = @"http://www.progressiv.no/";
+//static NSString *const HJEMMESIDE = @"http://www.progressiv.no";
+
+
+//static NSString *const DOMENE = @"http://localhost:8181/";
+//static NSString *const HJEMMESIDE = @"http://localhost:8181/index.html";
+///static NSString *const HJEMMESIDE = @"http://localhost:8181/modernizr.html";
+
+static NSString *const DOMENE = @"http://mobil-web-server.appspot.com/";
 static NSString *const HJEMMESIDE = @"http://mobil-web-server.appspot.com/";
-//static NSString *const HJEMMESIDE = @"http://localhost:8080/modernizr.html";
+//static NSString *const HJEMMESIDE = @"http://html5test.com/";
 
 static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHTML = 'haha dette virker';"
     "document.title;";    
@@ -34,7 +45,6 @@ static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHT
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self lastHjemmeSide];
-//    webView.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -85,11 +95,6 @@ static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHT
     [testLabel setText:resultat];
 }
 
--(IBAction)hentDocumentTitle {
-    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    [testLabel setText:title];
-}
-
 -(IBAction)lastForrigeSide{
     [webView goBack];
 }
@@ -98,12 +103,12 @@ static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHT
     [webView goForward];
 }
 
--(BOOL)tilhorerSammeDomene:(NSString *)url {
-    return [url hasPrefix: HJEMMESIDE];
+-(BOOL)sidenTilhorerApplikasjonen:(NSString *)urlSomString {
+    return [urlSomString hasPrefix: DOMENE];
 }
 
--(BOOL)erIPhoneKall:(NSURL*)url {
-    return ([url.scheme isEqual:@"iOS"] || [url.scheme isEqual:@"ios"]);
+-(BOOL)erJavaScriptTilDeviceKall:(NSString*)urlSomString {
+    return ([urlSomString hasSuffix:DEVICEEVENT]);
 }
 
 //  Webview eventer
@@ -112,25 +117,25 @@ static NSString *const JAVASCRIPT = @"document.getElementById('innhold').innerHT
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         NSURL *requestUrl =[request URL]; 
         NSString *urlSomString = [requestUrl absoluteString];
-        if ([self tilhorerSammeDomene:urlSomString]) {
-            return true;
-        } else if ([self erIPhoneKall:requestUrl]) {
-//            if ([[UIApplication sharedApplication]canOpenURL:requestUrl]) {
-//                [[UIApplication sharedApplication]openURL:requestUrl];
-//                return NO;
-//            }
-//            utfør appfunksjon
-            return false;
+        
+        if ([self erJavaScriptTilDeviceKall:urlSomString]) {
+            [self lastJavascript];
+            return NO;
+        } else  if ([self sidenTilhorerApplikasjonen:urlSomString]) {
+            return YES;
         } else  {
-            [[UIApplication sharedApplication] openURL:[request URL]];
-            return false;
+            if ([[UIApplication sharedApplication]canOpenURL:requestUrl]) {
+            [[UIApplication sharedApplication] openURL:requestUrl];
+                return NO;
+            }
         }
+        return NO;
     }
-    return true;
+    return YES;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
-    
+    // naturlig sted å sjekke siden for om det skal ha støtte for app-integrasjon
 }
 
 @end

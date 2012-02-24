@@ -6,7 +6,7 @@
   <link href="style/bootstrap.responsive.css" rel="stylesheet">
   <script src="script/libs/jquery-1.7.1.js"></script>
   <script src="/script/libs/bootstrap.js"></script>
-  <script src="script/offline_brukernavn.js"></script>
+  <script src="script/lokal_bruker.js"></script>
 
   <title>Loginsia</title>
 </head>
@@ -30,7 +30,7 @@
   <section>
     <article>
 
-      <form id="loginSkjema">
+      <form id="loginSkjema" action="index.html">
         <input type="text" placeholder="brukernavn" id="brukernavn" />
 
         <input id="submitKnapp" type="submit" value="Logg inn" />
@@ -40,25 +40,25 @@
   </div>
 </body>
 <script>
-  function visBrukernavn(bruker) {
-    jQuery('#brukernavn').val(bruker.navn);
+  function visBrukernavn() {
+    var brukernavn = LokalBruker.hentBruker();
+    if (brukernavn) {
+      jQuery('#brukernavn').val(brukernavn);
+    }
   }
 
-  function brukerLagret() {
-    window.location = 'index.html';
-  }
-
-  jQuery(document).ready(function(){
-
+  function leggTilLagreBrukernavnPaSubmittKnapp() {
     var submitKnapp = jQuery('#submitKnapp');
     submitKnapp.click(function() {
       var brukernavn = jQuery('#brukernavn').val();
-      MesanOfflineBruker.lagreBruker(brukernavn, brukerLagret);
-      return false;
+      LokalBruker.lagreBruker(brukernavn);
+      return true;
     });
+  }
 
-    MesanOfflineBruker.hentBruker(visBrukernavn);
-
+  jQuery(document).ready(function(){
+    visBrukernavn();
+    leggTilLagreBrukernavnPaSubmittKnapp();
   });
 
 </script>
