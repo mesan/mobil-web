@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">       
     <title>Kalkulator</title>
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="/script/libs/jquery-hash-change.js"></script>
     <script type="text/javascript" src="/script/page_section_controller.js"></script>
     <script src="script/lokal_bruker.js"></script>
-    
+      <script src="script/libs/modernizr-2.5.2.js"></script>
     
     <link href="http://demos.dojotoolkit.org/demos/touch/demo.css" rel="stylesheet">
 	<link href="/style/site.css" rel="stylesheet">
@@ -50,7 +50,7 @@
 
           <!-- Loginlink -->
           <aside class="span6" style="text-align: right;">
-            <a id="login" href="login.html">Logg inn</a>
+            <a id="login" class="touchLink" href="login.html">Logg inn</a>
           </aside>
 
           <!-- Høyre side -->
@@ -80,11 +80,11 @@
             </ul>
           </div>
         </nav>
-
+		 	
         <!-- Innhold -->
         <section class="span9">
           <article id="innhold" data-role="mobile-page">
-            <a class="mobileLink" href="#menu">Tilbake</a>
+            <a class="mobileLink touchLink" href="#menu">Tilbake</a>
               <h1>Lånebeløp : <span id="sliderValue1"> </span> </h1>
     <div id="slider1"></div>
     <h1>Nedbetalingstid : <span id="sliderValue2"> </span> </h1>
@@ -99,7 +99,7 @@
           </article>
 
           <article id="innhold2" class="hideOnMobile hide" data-role="mobile-page">
-            <a class="mobileLink" href="#innhold">Tilbake</a>
+            <a class="mobileLink touchLink" href="#innhold">Tilbake</a>
             <p>
               
                  <div class="tabbable">
@@ -196,14 +196,19 @@
 
       <!-- Rad 4 -->
       <footer class="row-fluid" style="text-align: center;">Copyright 2012 Mesan AS</footer>
-
+		<a class="touchLink" id="enableTouch">Touch</a>
     </div>
     <script type="text/javascript">
     (function(){
     	$("#btnCalculate").click(function(){
     		$("#innhold2").removeClass("hide");
     		window.location = "#innhold2";
-    	})
+    	});
+    	
+    	$("#enableTouch").click(function(){
+    		$("html").removeClass("no-touch");
+    		$("html").addClass("touch");
+    	});
     }())
     
     </script>
